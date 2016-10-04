@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>D3 Line Bullet V2</title>
+
+    <link rel="stylesheet" href="./static/css/nv.d3.css">
+    <link rel="stylesheet" href="./static/css/style.multiple-tooltips.css">
+
+    <script src="./static/js/d3.v3.min.js"></script>
+    <script src="./static/js/nv.d3.js"></script>
+    <script src="./static/js/d3_line_bullet.multiple-tooltips.js"></script>
+</head>
+<body>
+
+    <script>
+
+        nv.addGraph(function() {
+            var chart = d3.lineBulletChart();
+
+            d3.select('#chart svg')
+                    .datum(exampleData())
+                    .transition().duration(1000)
+                    .call(chart);
+
+            return chart;
+        });
+
+        function exampleData() {
+            return {
+                "title":"Revenue",		            //Label the bullet chart
+                "subtitle":"US$, in thousands",		//sub-label for bullet chart
+                "ranges":[150, 225, 300],	            //Minimum, mean and maximum values.
+                "markers":[250]			            //Place a marker on the chart (the white triangle marker)
+            };
+        }
+    </script>
+
+    <div id="chart">
+        <svg></svg>
+    </div>
+
+</body>
+</html>

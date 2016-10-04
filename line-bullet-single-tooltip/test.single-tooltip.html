@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>D3 Line Bullet Test</title>
+
+    <link rel="stylesheet" href="./static/css/nv.d3.css">
+    <link rel="stylesheet" href="./static/css/style.single-tooltip.css">
+
+    <script src="./static/js/d3.v3.min.js"></script>
+    <script src="./static/js/nv.d3.js"></script>
+    <script src="./static/js/d3_line_bullet.single-tooltip.js"></script>
+</head>
+<body>
+
+    <svg width="300" height="50">
+
+        <g class="lineBullet" transform="translate(0,10)">
+            <!--Horizontal Line-->
+            <g class="lineBullet-line">
+                <line x1="20" y1="10" x2="285" y2="10" stroke="black" stroke-width="2"></line>
+            </g>
+
+            <!--Min-->
+            <g class="lineBullet-tick">
+                <line x1="20" y1="5" x2="20" y2="15" stroke="black" stroke-width="2"></line>
+                <text text-anchor="middle" dy="1em" x="20" y="15">16</text>
+            </g>
+
+            <!--Mean-->
+            <g class="lineBullet-tick">
+                <line x1="150" y1="5" x2="150" y2="15" stroke="black" stroke-width="2"></line>
+                <text text-anchor="middle" dy="1em" x="150" y="15">500</text>
+            </g>
+
+            <!--Max-->
+            <g class="lineBullet-tick">
+                <line x1="285" y1="5" x2="285" y2="15" stroke="black" stroke-width="2"></line>
+                <text text-anchor="middle" dy="1em" x="285" y="15">2,000</text>
+            </g>
+
+            <g class="lineBullet-marker">
+                <text text-anchor="middle" dy="0" x="45" y="0">100</text>
+                <path class="lineBullet-markerTriangle" transform="translate(45,5)" d="M0,1.6666666666666667L1.6666666666666667,-1.6666666666666667 -1.6666666666666667,-1.6666666666666667Z"></path>
+            </g>
+        </g>
+    </svg>
+
+    <script>
+
+        nv.addGraph(function() {
+            var chart = d3.lineBullet();
+
+            chart.numberFormat("currency");
+            chart.addBackgroundColor(true);
+
+            d3.select('#chart1 svg')
+                    .datum({
+                        "min": 150.111,
+                        "mean": 240.165,
+                        "max": 300.23,
+                        "markers":[295.456]
+                    })
+                    .transition().duration(1000)
+                    .call(chart);
+
+            d3.select('#chart2 svg')
+                    .datum({
+                        "title": "Longer Longer Test Title",
+                        "min": 20.111,
+                        "mean": 31.165,
+                        "max": 40.23,
+                        "markers":[35.456]
+                    })
+                    .transition().duration(1000)
+                    .call(chart);
+
+            d3.select('#chart3 svg')
+                    .datum({
+                        "title": "Longer Longer Test Title",
+                        "subtitle": "Test Subtitle",
+                        "min": 0,
+                        "mean": 500.165,
+                        "max": 1000.23,
+                        "markers":[0]
+                    })
+                    .transition().duration(1000)
+                    .call(chart);
+
+            return chart;
+        });
+    </script>
+    <div id="chart1">
+        <svg></svg>
+    </div>
+
+    <div id="chart2">
+        <svg></svg>
+    </div>
+
+    <div id="chart3">
+        <svg></svg>
+    </div>
+
+</body>
+</html>

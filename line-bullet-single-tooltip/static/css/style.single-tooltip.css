@@ -1,0 +1,122 @@
+svg {
+     width: auto;
+     height: auto;
+ }
+
+svg.good {
+    background-color: green;
+}
+
+svg.ok {
+    background-color: yellow;
+}
+
+svg.bad {
+    background-color: red;
+}
+
+svg .lineBullet text {
+    font: normal 12px Arial;
+}
+
+svg .lineBullet .lineBullet-marker .lineBullet-markerTriangle {
+    stroke: #000;
+    fill: 0;
+    stroke-width: 2px;
+}
+
+/*.lineBullet-tooltip {*/
+    /*position: absolute;*/
+    /*padding: 5px;*/
+    /*background: white;*/
+    /*border: thin solid black;*/
+/*}*/
+.lineBullet-tooltip {
+    position: absolute;
+    background-color: rgba(255,255,255,1.0);
+    padding: 1px;
+    border: 1px solid rgba(0,0,0,.2);
+    z-index: 10000;
+
+    font-family: Arial;
+    font-size: 13px;
+    text-align: left;
+    pointer-events: none;
+
+    white-space: nowrap;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.lineBullet-tooltip h3 {
+    margin: 0;
+    padding: 4px 14px;
+    line-height: 18px;
+    font-weight: normal;
+    background-color: rgba(247,247,247,0.75);
+    text-align: center;
+    font-size: initial;
+
+    border-bottom: 1px solid #ebebeb;
+
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+
+.lineBullet-tooltip h6 {
+    margin: 0;
+    padding: 2px 7px;
+    line-height: 9px;
+    font-weight: normal;
+    background-color: rgba(247,247,247,0.75);
+    text-align: center;
+
+    border-bottom: 1px solid #ebebeb;
+
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+
+.lineBullet-tooltip table {
+    /*width: 100%;*/
+    margin: 6px;
+    border-spacing:0;
+}
+
+.lineBullet-tooltip table td {
+    padding: 2px 9px 2px 0;
+    vertical-align: middle;
+}
+
+.lineBullet-tooltip table.no-padding {
+    margin: 0;
+    border-spacing:0;
+}
+
+.lineBullet-tooltip table.no-padding td {
+    padding: 0;
+    vertical-align: middle;
+}
+
+.lineBullet-tooltip table td.key {
+    font-weight:normal;
+}
+.lineBullet-tooltip table td.value {
+    text-align: right;
+    font-weight: bold;
+}
+
+.lineBullet-tooltip table tr.highlight td {
+    padding: 1px 9px 1px 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-top-width: 1px;
+}
